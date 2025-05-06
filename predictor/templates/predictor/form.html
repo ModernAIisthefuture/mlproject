@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Boston Housing Prediction</title>
+</head>
+<body>
+    <h2>Enter Features for Prediction</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+        <h3>Predicted House Price: {{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
